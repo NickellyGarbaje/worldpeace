@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Peace</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Centraliza o vídeo no meio da tela com borda rosa mais grossa */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        video {
+            max-width: 80%;
+            max-height: 80%;
+            border: 8px solid #ff69b4; /* Borda rosa grossa */
+            border-radius: 10px;
+        }
+
+        /* ASCII unicórnios à esquerda e direita do vídeo */
+        .ascii-unicorn {
+            position: absolute;
+            color: #ff69b4; /* Cor rosa */
+            font-size: 12px;
+            white-space: pre;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .ascii-left {
+            left: 5%;
+        }
+
+        .ascii-right {
+            right: 5%;
+        }
+
+        /* Textos "world peace" subindo pela tela */
+        .floating-text {
+            position: absolute;
+            width: 100%;
+            color: #ff69b4;
+            font-size: 24px;
+            text-align: center;
+            animation: floatText 10s linear infinite;
+            z-index: 0;
+        }
+
+        /* Animação para os textos subirem pela tela */
+        @keyframes floatText {
+            0% {
+                bottom: -50px;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 100vh;
+                opacity: 0;
+            }
+        }
+
+        /* Sparkles rosa que seguem o mouse */
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            width: 15px;
+            height: 15px;
+            background-image: url('https://img.icons8.com/emoji/48/FF69B4/sparkles.png'); /* Estrela rosa */
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: sparkleFade 1s linear;
+        }
+
+        @keyframes sparkleFade {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Emoji que aparece ao clicar */
+        .emoji {
+            position: absolute;
+            font-size: 40px;
+            pointer-events: none;
+            animation: emojiFade 2s forwards;
+        }
+
+        @keyframes emojiFade {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50px); /* Sobe antes de desaparecer */
+            }
+        }
+
+        /* Cria várias colunas de textos subindo */
+        .text-columns {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none; /* Os textos não bloqueiam os cliques */
+        }
+
+        .text-column {
+            width: 15%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ASCII Unicórnios nas laterais -->
+    <div class="ascii-unicorn ascii-left">
+<pre>
+\.
+ \\      .
+  \\ _,.+;)_
+  .\\;~%:88%%.
+ (( a   `)9,8;%.
+ /`   _) ' `9%%%?
+(' .-' j    '8%%'
+ `"+   |    .88%)+._____..,,_   ,+%$%.
+       :.   d%9`             `-%*'"'~%$.
+    ___(   (%C                 `.   68%%9
+  ."        \7                  ;  C8%%)`
+  : ."-.__,'.____________..,`   L.  \86' ,
+  : L    : :            `  .'\.   '.  %$9%)
+  ;  -.  : |             \  \  "-._ `. `~"
+   `. !  : |              )  >     ". ?
+     `'  : |            .' .'       : |
+         ; !          .' .'         : |
+        ,' ;         ' .'           ; (
+       .  (         j  (            `  \
+       """'          ""'             `"" 
+</pre>
+    </div>
+
+    <div class="ascii-unicorn ascii-right">
+<pre>
+\.
+ \\      .
+  \\ _,.+;)_
+  .\\;~%:88%%.
+ (( a   `)9,8;%.
+ /`   _) ' `9%%%?
+(' .-' j    '8%%'
+ `"+   |    .88%)+._____..,,_   ,+%$%.
+       :.   d%9`             `-%*'"'~%$.
+    ___(   (%C                 `.   68%%9
+  ."        \7                  ;  C8%%)`
+  : ."-.__,'.____________..,`   L.  \86' ,
+  : L    : :            `  .'\.   '.  %$9%)
+  ;  -.  : |             \  \  "-._ `. `~"
+   `. !  : |              )  >     ". ?
+     `'  : |            .' .'       : |
+         ; !          .' .'         : |
+        ,' ;         ' .'           ; (
+       .  (         j  (            `  \
+       """'          ""'             `"" 
+</pre>
+    </div>
+
+    <!-- Container do vídeo no centro -->
+    <div class="video-container">
+        <video src="video_2024-09-04_15-53-05.mp4" controls></video> <!-- Insere o vídeo aqui -->
+    </div>
+
+    <!-- Várias colunas de textos "world peace" subindo -->
+    <div class="text-columns">
+        <div class="text-column">
+            <div class="floating-text" style="animation-delay: 0s;">🌍☮️ world peace 🌍☮️</div>
+            <div class="floating-text" style="animation-delay: 3s;">🌍☮️ world peace 🌍☮️</div>
+        </div>
+        <div class="text-column">
+            <div class="floating-text" style="animation-delay: 2s;">🌍☮️ world peace 🌍☮️</div>
+            <div class="floating-text" style="animation-delay: 5s;">🌍☮️ world peace 🌍☮️</div>
+        </div>
+        <div class="text-column">
+            <div class="floating-text" style="animation-delay: 1s;">🌍☮️ world peace 🌍☮️</div>
+            <div class="floating-text" style="animation-delay: 4s;">🌍☮️ world peace 🌍☮️</div>
+        </div>
+        <div class="text-column">
+            <div class="floating-text" style="animation-delay: 3s;">🌍☮️ world peace 🌍☮️</div>
+            <div class="floating-text" style="animation-delay: 6s;">🌍☮️ world peace 🌍☮️</div>
+        </div>
+        <div class="text-column">
+            <div class="floating-text" style="animation-delay: 0s;">🌍☮️ world peace 🌍☮️</div>
+            <div class="floating-text" style="animation-delay: 2s;">🌍☮️ world peace 🌍☮️</div>
+        </div>
+    </div>
+
+    <script>
+        // Função para gerar um número aleatório entre dois valores
+        function randomBetween(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Efeito de sparkles com o mouse
+        document.body.addEventListener('mousemove', function(e) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            document.body.appendChild(sparkle);
+
+            // Posiciona a estrelinha no local do mouse
+            sparkle.style.left = `${e.pageX - 7}px`; // Centraliza o sparkle em relação ao mouse
+            sparkle.style.top = `${e.pageY
